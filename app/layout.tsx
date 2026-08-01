@@ -14,9 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Taxacharya | Tax, GST & Compliance",
+  title: "Taxacharya | Income Tax, GST, Company Registration & Compliance",
+
   description:
-    "Professional Income Tax, GST, Company Registration and Compliance Services.",
+    "Professional Chartered Accountant services including Income Tax Return Filing, GST Registration, GST Return Filing, Company Registration, MSME Registration, Trademark Registration and Business Compliance across India.",
 };
 
 export default function RootLayout({
