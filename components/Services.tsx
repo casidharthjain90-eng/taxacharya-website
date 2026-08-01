@@ -1,96 +1,96 @@
-export default function Services() {
+import Link from "next/link";
 
+export default function Services() {
   const services = [
     {
-      title: "Income Tax Return",
+      title: "Income Tax Return Filing",
       icon: "💰",
-      desc: "ITR Filing for Individuals & Businesses"
+      desc: "ITR filing for salaried individuals, professionals and businesses.",
+      href: "/income-tax-return-filing",
     },
     {
-      title: "GST Services",
+      title: "GST Registration",
       icon: "📄",
-      desc: "Registration, Returns & Compliance"
+      desc: "Fast GST Registration with complete documentation support.",
+      href: "/gst-registration",
+    },
+    {
+      title: "GST Return Filing",
+      icon: "🧾",
+      desc: "Monthly, Quarterly and Annual GST Return Filing.",
+      href: "/",
     },
     {
       title: "Company Registration",
       icon: "🏢",
-      desc: "Private Limited, LLP & OPC"
+      desc: "Private Limited, LLP, OPC and Startup Registration.",
+      href: "/",
     },
     {
-      title: "Accounting",
-      icon: "📊",
-      desc: "Bookkeeping & Financial Statements"
+      title: "Trademark Registration",
+      icon: "🛡️",
+      desc: "Protect your brand with Trademark Registration.",
+      href: "/",
     },
     {
-      title: "TDS Compliance",
-      icon: "🧾",
-      desc: "Quarterly Returns & Certificates"
-    },
-    {
-      title: "Tax Planning",
+      title: "MSME Registration",
       icon: "📈",
-      desc: "Personal & Business Tax Planning"
-    }
+      desc: "Get MSME/Udyam Registration with expert assistance.",
+      href: "/",
+    },
   ];
 
   return (
-
     <section
       id="services"
-      className="py-24 bg-white"
+      className="bg-gray-50 py-24"
     >
+      <div className="mx-auto max-w-7xl px-6">
 
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center">
 
-        <h2 className="text-5xl font-bold text-center text-blue-900">
+          <h2 className="text-5xl font-bold text-red-700">
+            Our Professional Services
+          </h2>
 
-          Our Services
+          <p className="mt-4 text-lg text-gray-600">
+            End-to-end Tax, GST and Business Compliance solutions.
+          </p>
 
-        </h2>
+        </div>
 
-        <p className="text-center mt-4 text-gray-500">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          Complete Tax & Compliance Solutions
-
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-
-          {services.map((service,index)=>(
-
-            <div
+          {services.map((service, index) => (
+            <Link
               key={index}
-              className="rounded-2xl border p-8 hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+              href={service.href}
             >
+              <div className="group h-full rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-red-200 hover:shadow-2xl">
 
-              <div className="text-5xl">
+                <div className="text-5xl">
+                  {service.icon}
+                </div>
 
-                {service.icon}
+                <h3 className="mt-6 text-2xl font-bold text-gray-900">
+                  {service.title}
+                </h3>
+
+                <p className="mt-4 text-gray-600">
+                  {service.desc}
+                </p>
+
+                <div className="mt-8 font-semibold text-red-700 group-hover:translate-x-1 transition">
+                  Learn More →
+                </div>
 
               </div>
-
-              <h3 className="text-2xl font-bold mt-6">
-
-                {service.title}
-
-              </h3>
-
-              <p className="mt-4 text-gray-500">
-
-                {service.desc}
-
-              </p>
-
-            </div>
-
+            </Link>
           ))}
 
         </div>
 
       </div>
-
     </section>
-
   );
-
 }
