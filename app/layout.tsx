@@ -21,6 +21,30 @@ export const metadata: Metadata = {
   description:
     "Professional Chartered Accountant services including Income Tax Return Filing, GST Registration, GST Return Filing, Company Registration, MSME Registration, Trademark Registration and Business Compliance across India.",
 
+  keywords: [
+    "Income Tax",
+    "GST Registration",
+    "GST Return Filing",
+    "Company Registration",
+    "Trademark Registration",
+    "MSME Registration",
+    "Chartered Accountant",
+    "Tax Consultant",
+    "Taxacharya",
+    "Business Compliance",
+    "ITR Filing",
+  ],
+
+  authors: [
+    {
+      name: "Taxacharya",
+      url: "https://www.taxacharya.com",
+    },
+  ],
+
+  creator: "Taxacharya",
+  publisher: "Taxacharya",
+
   alternates: {
     canonical: "/",
   },
@@ -50,6 +74,34 @@ export const metadata: Metadata = {
       "Professional Chartered Accountant services across India.",
     images: ["/og-image.jpg"],
   },
+
+  icons: {
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  name: "Taxacharya",
+  url: "https://www.taxacharya.com",
+  logo: "https://www.taxacharya.com/logo.jpg",
+  image: "https://www.taxacharya.com/og-image.jpg",
+  telephone: "+91-7488211785",
+  email: "admin@taxacharya.com",
+  description:
+    "Professional Chartered Accountant services including Income Tax Return Filing, GST Registration, GST Return Filing, Company Registration, MSME Registration, Trademark Registration and Business Compliance.",
+
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "IN",
+  },
+
+  areaServed: "India",
+
+  sameAs: [],
 };
 
 export default function RootLayout({
@@ -78,6 +130,15 @@ export default function RootLayout({
             gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
           `}
         </Script>
+
+        {/* Structured Data */}
+        <Script
+          id="schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
 
         {children}
       </body>
