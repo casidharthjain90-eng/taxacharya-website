@@ -14,10 +14,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.taxacharya.com"),
+
   title: "Taxacharya | Income Tax, GST, Company Registration & Compliance",
 
   description:
     "Professional Chartered Accountant services including Income Tax Return Filing, GST Registration, GST Return Filing, Company Registration, MSME Registration, Trademark Registration and Business Compliance across India.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Taxacharya | Income Tax, GST & Compliance",
+    description:
+      "Professional Chartered Accountant services across India.",
+    url: "https://www.taxacharya.com",
+    siteName: "Taxacharya",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Taxacharya",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Taxacharya | Income Tax, GST & Compliance",
+    description:
+      "Professional Chartered Accountant services across India.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
