@@ -139,7 +139,12 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLd),
           }}
         />
-
+<Script
+  async
+  strategy="afterInteractive"
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548462714001937"
+  crossOrigin="anonymous"
+/>
         {children}
       </body>
     </html>
